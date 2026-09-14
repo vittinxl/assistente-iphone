@@ -1,0 +1,5 @@
+# Imagem Docker minima (chat Flowise + DuckDB + UI ML sem treino)
+streamlit>=1.32.0
+requests>=2.31.0
+duckdb>=1.0.0
+pandas>=2.2.0

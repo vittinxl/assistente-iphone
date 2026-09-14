@@ -1,0 +1,42 @@
+ML TRADICIONAL NO STREAMLIT — ROTEIRO COMPLETO
+=============================================
+
+SUBIR O APP
+-----------
+1. Docker Desktop -> Running
+2. Duplo-clique: SUBIR.cmd
+3. Navegador: http://localhost:8501
+4. Aba: ML tradicional
+
+FLUXO (visao de cientista de dados)
+-----------------------------------
+1. EDA
+   - 30.000 linhas, ~22% inadimplentes
+   - Confira tipos e dicionario embutido
+
+2. Features
+   - Preset "Recomendado": remove ID
+   - Tabela mostra descricao + sugestao de remocao por coluna
+
+3. Treino FLAML
+   - Preset "Balanceado (120s)"
+   - metric: roc_auc
+   - Treinar modelo FLAML
+   - Salvar bundle em disco -> gera:
+       data/ml/models/credit_default_flaml.pkl
+       data/ml/models/credit_default_flaml.meta.json
+
+4. Predicao (.pkl)
+   - Baixar template CSV ou exemplo (5 clientes sem alvo)
+   - Ou enviar seu CSV (sem coluna alvo)
+   - Gerar predicoes -> pred_default, proba_default
+   - Baixar CSV com resultados
+
+HIPERPARAMETROS NA UI
+---------------------
+- time_budget, metric, n_splits, eval_method
+- ensemble, early_stop, estimator_list
+- custom_hp: learning_rate, n_estimators, min_child_samples, max_depth
+
+Dataset UCI:
+  https://archive-beta.ics.uci.edu/dataset/350/default+of+credit+card+clients

@@ -1,0 +1,11 @@
+sku,modelo,linha,armazenamento_gb,cor,preco_brl,parcelamento_sem_juros,tem_5g,camera_principal_mp,bateria_video_horas,apple_intelligence,disponivel_online,garantia_meses
+IP15-128-BLK,iPhone 15,iPhone 15,128,Preto,5299,10,sim,48,20,nao,sim,12
+IP15-256-BLU,iPhone 15,iPhone 15,256,Azul,5899,10,sim,48,20,nao,sim,12
+IP15P-128-NAT,iPhone 15 Pro,iPhone 15 Pro,128,Titanio Natural,7299,12,sim,48,23,nao,sim,12
+IP15PM-256-BLU,iPhone 15 Pro Max,iPhone 15 Pro Max,256,Titanio Azul,8499,12,sim,48,29,nao,sim,12
+IP16-128-WHT,iPhone 16,iPhone 16,128,Branco,6199,12,sim,48,22,sim,sim,12
+IP16-256-PNK,iPhone 16,iPhone 16,256,Rosa,6899,12,sim,48,22,sim,sim,12
+IP16P-256-BLK,iPhone 16 Pro,iPhone 16 Pro,256,Preto,9199,12,sim,48,27,sim,sim,12
+IP16PM-512-DES,iPhone 16 Pro Max,iPhone 16 Pro Max,512,Deserto,11299,12,sim,48,33,sim,sim,12
+IPSE-128-RED,iPhone SE,iPhone SE,128,Vermelho,3499,10,sim,12,15,nao,sim,12
+IP14-128-MDN,iPhone 14,iPhone 14,128,Meia Noite,4599,10,sim,12,20,nao,sim,12

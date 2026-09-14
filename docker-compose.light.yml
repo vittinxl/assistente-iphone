@@ -1,0 +1,7 @@
+# Overlay: imagem pequena para quando o export da imagem falha (I/O error)
+services:
+  streamlit-chat:
+    build:
+      args:
+        BUILD_PROFILE: core
+        INSTALL_ML: "false"

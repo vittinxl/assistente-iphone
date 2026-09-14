@@ -1,0 +1,18 @@
+# Copie para config.toml: copy config.toml.example config.toml
+
+[app]
+# lmstudio = chat direto (recomendado). flowise = via Agent do Flowise. gemini = API Google.
+chat_backend = "lmstudio"
+
+[lmstudio]
+base_url = "http://host.docker.internal:1234/v1"
+model = "local-model"
+temperature = 0.7
+
+[flowise]
+api_url = "http://host.docker.internal:3000/api/v1/prediction/SEU_CHATFLOW_ID"
+bearer_token = "COLE_SEU_TOKEN_AQUI"
+
+[gemini]
+model = "gemini-2.0-flash"
+embedding_model = "models/text-embedding-004"

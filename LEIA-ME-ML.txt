@@ -1,0 +1,41 @@
+ML TRADICIONAL — COMO USAR
+==========================
+
+>>> SEM INSTALAR PYTHON NO PC (recomendado se o disco esta cheio):
+    Leia:  SEM-PYTHON-USE-COLAB.txt
+    Arquivo:  Colab_UCI350_FLAML.ipynb  -> upload no Google Colab
+
+--- OU, se tiver Python instalado ---
+
+1. Duplo-clique em:  INICIAR-ML.bat
+
+2. O navegador abre em:  http://localhost:8501
+
+3. Na interface:
+   - EDA: explorar o dataset UCI 350
+   - Features: remover coluna ID (recomendado)
+   - Treino FLAML: treinar e salvar .pkl
+   - Predição: enviar CSV novo com as mesmas colunas
+
+Dataset:
+  https://archive-beta.ics.uci.edu/dataset/350/default+of+credit+card+clients
+
+Alvo (target):
+  default_payment_next_month  (inadimplência no mês seguinte)
+
+Requisitos:
+  - Python 3.10+ instalado de https://www.python.org/downloads/
+  - Na instalacao: marque [x] Add python.exe to PATH
+  - Desative o alias falso da Microsoft Store:
+      Configuracoes > Aplicativos > Aliases de execucao
+      Desligue python.exe e python3.exe
+  - Internet na primeira execução (download do UCI ~5 MB)
+
+Se INICIAR-ML.bat falhar, abra o CMD nesta pasta e cole:
+
+  python -m venv .venv
+  .venv\Scripts\pip install -r requirements-ml-only.txt
+  .venv\Scripts\python -m streamlit run ml_app.py
+
+A aba "ML tradicional" também existe no app completo (app.py),
+mas o jeito mais simples é usar só o ml_app.py via INICIAR-ML.bat.

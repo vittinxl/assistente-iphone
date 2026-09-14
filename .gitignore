@@ -1,0 +1,9 @@
+config.toml
+.env
+.venv/
+__pycache__/
+*.pyc
+
+data/ml/*.parquet
+data/ml/*.xls
+data/ml/models/*.pkl

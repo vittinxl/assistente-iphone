@@ -1,0 +1,8 @@
+data/
+.env
+.git
+*.log
+__pycache__
+*.pyc
+.pytest_cache
+recover-docker.ps1

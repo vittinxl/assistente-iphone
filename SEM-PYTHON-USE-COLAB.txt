@@ -1,0 +1,33 @@
+ML TRADICIONAL SEM INSTALAR PYTHON NO DISCO C:
+=============================================
+
+O app Streamlit local precisa de Python OU Docker.
+Se voce nao quer instalar Python, use o Google Colab (gratis, roda na nuvem).
+
+PASSO A PASSO
+-------------
+
+1. Abra no navegador:  https://colab.research.google.com
+
+2. Menu:  Arquivo  ->  Fazer upload do notebook
+
+3. Escolha o arquivo desta pasta:
+      Colab_UCI350_FLAML.ipynb
+
+4. Menu:  Runtime  ->  Executar tudo
+   (na primeira vez pode pedir para permitir acesso)
+
+5. O notebook vai:
+   - Baixar o dataset UCI 350 (~5 MB)
+   - Mostrar EDA
+   - Treinar FLAML (AutoML)
+   - Baixar o arquivo credit_default_flaml.pkl para o seu PC
+
+Dataset:
+  https://archive-beta.ics.uci.edu/dataset/350/default+of+credit+card+clients
+
+Nada disso instala Python no Windows.
+O processamento fica nos servidores do Google.
+
+Se no futuro liberar espaco e o Docker funcionar,
+a aba "ML tradicional" no app.py usa o mesmo codigo em ml_traditional/.

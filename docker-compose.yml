@@ -1,0 +1,22 @@
+services:
+  streamlit-chat:
+    build: .
+    restart: unless-stopped
+    ports:
+      - "8501:8501"
+    volumes:
+      - ./config.toml:/app/config.toml:ro
+      - ./data:/app/data
+    environment:
+      CHAT_STORE_PATH: /app/data/chat_history.json
+      TXTAI_PATH: /app/data/txtai
+      CHAT_BACKEND: ${CHAT_BACKEND:-lmstudio}
+      LMSTUDIO_BASE_URL: ${LMSTUDIO_BASE_URL:-http://host.docker.internal:1234/v1}
+      LMSTUDIO_MODEL: ${LMSTUDIO_MODEL:-local-model}
+      FLOWISE_API_URL: ${FLOWISE_API_URL:-}
+      FLOWISE_BEARER_TOKEN: ${FLOWISE_BEARER_TOKEN:-}
+      GEMINI_API_KEY: ${GEMINI_API_KEY:-}
+      GEMINI_MODEL: ${GEMINI_MODEL:-gemini-2.0-flash}
+      GEMINI_EMBEDDING_MODEL: ${GEMINI_EMBEDDING_MODEL:-models/text-embedding-004}
+    extra_hosts:
+      - "host.docker.internal:host-gateway"

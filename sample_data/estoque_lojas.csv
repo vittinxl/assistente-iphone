@@ -1,0 +1,13 @@
+sku,canal,regiao,estado,cidade,estoque_disponivel,estoque_reservado,retirada_hoje,previsao_reposicao,data_atualizacao
+IP15-128-BLK,Online,Sudeste,SP,Sao Paulo,18,4,sim,2026-05-28,2026-05-23
+IP15-256-BLU,Online,Sudeste,RJ,Rio de Janeiro,11,2,sim,2026-05-27,2026-05-23
+IP15P-128-NAT,Online,Sudeste,MG,Belo Horizonte,6,1,nao,2026-05-30,2026-05-23
+IP15PM-256-BLU,Loja,Sul,PR,Curitiba,3,1,nao,2026-05-31,2026-05-23
+IP16-128-WHT,Online,Sudeste,SP,Sao Paulo,24,6,sim,2026-05-26,2026-05-23
+IP16-256-PNK,Loja,Sudeste,SP,Campinas,7,1,sim,2026-05-29,2026-05-23
+IP16P-256-BLK,Online,Sul,RS,Porto Alegre,5,2,nao,2026-06-01,2026-05-23
+IP16PM-512-DES,Online,Nordeste,BA,Salvador,2,1,nao,2026-06-03,2026-05-23
+IPSE-128-RED,Loja,Nordeste,PE,Recife,14,2,sim,2026-05-25,2026-05-23
+IP14-128-MDN,Online,Centro-Oeste,DF,Brasilia,9,3,sim,2026-05-27,2026-05-23
+IP16-128-WHT,Loja,Sudeste,RJ,Niteroi,4,1,sim,2026-05-28,2026-05-23
+IP15-128-BLK,Loja,Nordeste,CE,Fortaleza,8,2,sim,2026-05-29,2026-05-23

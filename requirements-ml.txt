@@ -1,0 +1,4 @@
+# Dependencias pesadas de ML (instale so se for usar a aba ML tradicional)
+flaml[automl]>=2.1.0
+lightgbm>=4.0.0
+xgboost>=2.0.0
