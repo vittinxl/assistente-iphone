@@ -13,3 +13,4 @@ pyarrow>=15.0.0
 flaml[automl]>=2.1.0
 lightgbm>=4.0.0
 xgboost>=2.0.0
+langfuse
