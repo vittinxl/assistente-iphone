@@ -10,8 +10,8 @@ model = "local-model"
 temperature = 0.7
 
 [flowise]
-api_url = "http://host.docker.internal:3000/api/v1/prediction/SEU_CHATFLOW_ID"
-bearer_token = "COLE_SEU_TOKEN_AQUI"
+api_url = "http://host.docker.internal:3000/api/v1/prediction/4896fac3-c11b-4b9e-a3d2-13dad3dc54ff"
+bearer_token = ""
 
 [gemini]
 model = "gemini-2.0-flash"
