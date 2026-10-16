@@ -21,6 +21,7 @@ from lmstudio_client import LmStudioError, chat as lmstudio_chat, check_server a
 from duckdb_store import ensure_duckdb_database, get_datasets, get_duckdb_path, get_sample_queries, preview_table, run_query
 from text_utils import repair_mojibake
 import os
+from langfuse import get_client
 
 TXTAI_AVAILABLE = True
 try:
