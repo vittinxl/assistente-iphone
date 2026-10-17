@@ -1,0 +1,53 @@
+
+[
+  {
+    "id": 1,
+    "question": "Quais iPhones estão disponíveis?",
+    "expected_topic": "catalogo"
+  },
+  {
+    "id": 2,
+    "question": "Qual é o preço do iPhone 15?",
+    "expected_topic": "precos"
+  },
+  {
+    "id": 3,
+    "question": "Quais são as opções de armazenamento?",
+    "expected_topic": "especificacoes"
+  },
+  {
+    "id": 4,
+    "question": "Como funciona a garantia?",
+    "expected_topic": "garantia"
+  },
+  {
+    "id": 5,
+    "question": "Vocês aceitam pagamento por Pix?",
+    "expected_topic": "pagamento"
+  },
+  {
+    "id": 6,
+    "question": "Posso parcelar a compra?",
+    "expected_topic": "pagamento"
+  },
+  {
+    "id": 7,
+    "question": "Qual iPhone tem a melhor câmera?",
+    "expected_topic": "comparacao"
+  },
+  {
+    "id": 8,
+    "question": "Quero comprar um iPhone para estudar",
+    "expected_topic": "recomendacao"
+  },
+  {
+    "id": 9,
+    "question": "Como funciona a entrega?",
+    "expected_topic": "entrega"
+  },
+  {
+    "id": 10,
+    "question": "Quais cores estão disponíveis?",
+    "expected_topic": "especificacoes"
+  }
+]
