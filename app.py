@@ -416,28 +416,28 @@ def handle_chat_prompt_flowise(prompt: str, active_chat: dict, flowise_settings:
                     f"Pergunta do cliente: {prompt}"
                 )
 
-                        payload: dict = {"question": question}
-            if active_chat.get("flowise_chat_id"):
-                payload["chatId"] = active_chat["flowise_chat_id"]
+                                payload: dict = {"question": question}
+        if active_chat.get("flowise_chat_id"):
+            payload["chatId"] = active_chat["flowise_chat_id"]
 
-            with st.spinner("Consultando Flowise..."):
-                langfuse = get_client()
+        with st.spinner("Consultando Flowise..."):
+            langfuse = get_client()
 
-    with langfuse.start_as_current_observation(
-        as_type="span",
-        name="flowise-chat",
-        input={"question": question},
-    ) as span:
-        result = flowise_query(payload)
+            with langfuse.start_as_current_observation(
+                as_type="span",
+                name="flowise-chat",
+                input={"question": question},
+            ) as span:
+                result = flowise_query(payload)
 
-        span.update(
-            output={
-                "answer": flowise_extract_reply(result)
-            },
-            metadata={"backend": "flowise"},
-        )
+                span.update(
+                    output={
+                        "answer": flowise_extract_reply(result)
+                    },
+                    metadata={"backend": "flowise"},
+                )
 
-    langfuse.flush()
+            langfuse.flush()
 
             reply = flowise_extract_reply(result)
             if result.get("chatId"):
