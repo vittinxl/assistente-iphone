@@ -420,8 +420,8 @@ def handle_chat_prompt_flowise(prompt: str, active_chat: dict, flowise_settings:
             if active_chat.get("flowise_chat_id"):
                 payload["chatId"] = active_chat["flowise_chat_id"]
 
-            with st.spinner("Consultando Flowise..."):
-    langfuse = get_client()
+                    with st.spinner("Consultando Flowise..."):
+            langfuse = get_client()
 
     with langfuse.start_as_current_observation(
         as_type="span",
