@@ -17,7 +17,6 @@ COPY bootstrap.py txtai_store.py config_loader.py auth.py flowise_client.py lmst
 COPY ml_traditional ./ml_traditional
 COPY sample_data ./sample_data
 COPY store_docs ./store_docs
-COPY .streamlit ./.streamlit
 COPY config.toml.example ./config.toml.example
 
 RUN cp config.toml.example config.toml \
