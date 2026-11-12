@@ -393,6 +393,7 @@ def handle_chat_prompt_lmstudio(prompt: str, active_chat: dict) -> None:
     persist_chats()
 
 
+
 def handle_chat_prompt_flowise(prompt: str, active_chat: dict, flowise_settings: FlowiseSettings) -> None:
     active_chat["messages"].append({"role": "user", "content": prompt})
     update_chat_metadata(active_chat)
@@ -416,67 +417,38 @@ def handle_chat_prompt_flowise(prompt: str, active_chat: dict, flowise_settings:
                     f"Pergunta do cliente: {prompt}"
                 )
 
-                                payload: dict = {"question": question}
-        if active_chat.get("flowise_chat_id"):
-            payload["chatId"] = active_chat["flowise_chat_id"]
+            payload: dict = {"question": question}
+            if active_chat.get("flowise_chat_id"):
+                payload["chatId"] = active_chat["flowise_chat_id"]
 
-        with st.spinner("Consultando Flowise..."):
-            langfuse = get_client()
+            with st.spinner("Consultando Flowise..."):
+                langfuse = get_client()
 
-            with langfuse.start_as_current_observation(
-                as_type="span",
-                name="flowise-chat",
-                input={"question": question},
-            ) as span:
-                result = flowise_query(payload)
+                with langfuse.start_as_current_observation(
+                    as_type="span",
+                    name="flowise-chat",
+                    input={"question": question},
+                ) as span:
+                    result = flowise_query(payload)
 
-                span.update(
-                    output={
-                        "answer": flowise_extract_reply(result)
-                    },
-                    metadata={"backend": "flowise"},
-                )
+                    span.update(
+                        output={
+                            "answer": flowise_extract_reply(result)
+                        },
+                        metadata={"backend": "flowise"},
+                    )
 
-            langfuse.flush()
+                langfuse.flush()
 
-            reply = flowise_extract_reply(result)
-            if result.get("chatId"):
-                active_chat["flowise_chat_id"] = result["chatId"]
+                reply = flowise_extract_reply(result)
+                if result.get("chatId"):
+                    active_chat["flowise_chat_id"] = result["chatId"]
 
-            st.markdown(reply)
+                st.markdown(reply)
+
         except FlowiseAPIError as exc:
-            reply = f"**Erro do Flowise:** {exc}"
-            err_text = str(exc)
-            if "Unauthorized" in err_text:
-                st.error("Token invalido em config.toml → [flowise] bearer_token")
-            elif "Connection error" in err_text or "Agent node" in err_text:
-                st.warning("Flowise Agent falhou — tentando LM Studio direto...")
-                try:
-                    context_str = get_rag_context(prompt)
-                    system_prompt = (
-                        "Voce e um assistente de uma loja de iPhone. "
-                        "Responda em portugues de forma clara."
-                    )
-                    if context_str:
-                        system_prompt += f"\n\nContexto:\n{context_str}"
-                    reply = lmstudio_chat(
-                        prompt,
-                        history=active_chat["messages"][:-1][-10:],
-                        system_prompt=system_prompt,
-                    )
-                    st.markdown(reply or EMPTY_ASSISTANT_REPLY)
-                    active_chat["messages"].append(
-                        {"role": "assistant", "content": reply or EMPTY_ASSISTANT_REPLY}
-                    )
-                    update_chat_metadata(active_chat)
-                    persist_chats()
-                    return
-                except LmStudioError as lm_exc:
-                    reply = f"**Erro LM Studio:** {lm_exc}"
-                    st.error(str(lm_exc))
-            else:
-                st.error(err_text)
-            st.markdown(reply)
+            reply = f"Erro do Flowise: {exc}"
+            st.error(reply)
         except Exception as exc:
             reply = f"Erro ao processar resposta: {exc}"
             st.error(reply)
@@ -484,6 +456,7 @@ def handle_chat_prompt_flowise(prompt: str, active_chat: dict, flowise_settings:
     active_chat["messages"].append({"role": "assistant", "content": reply})
     update_chat_metadata(active_chat)
     persist_chats()
+
 
 
 def handle_chat_prompt_gemini(prompt: str, active_chat: dict, settings: GeminiSettings) -> None:
